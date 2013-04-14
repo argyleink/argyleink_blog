@@ -58,7 +58,6 @@ hr {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  -o-box-sizing: content-box;
   -ms-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
@@ -145,7 +144,6 @@ input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
@@ -156,7 +154,6 @@ input[type="search"] {
   -webkit-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  -o-box-sizing: content-box;
   -ms-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -186,18 +183,313 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
+.btn-simple {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  font-size: 13px;
+  padding: 9.945px 21.879px;
+  -webkit-border-radius: 3.000002307694083px;
+  -moz-border-radius: 3.000002307694083px;
+  -ms-border-radius: 3.000002307694083px;
+  border-radius: 3.000002307694083px;
+  background-color: #40aabf;
+  color: #494949;
+  color: rgba(73,73,73,0.95);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-simple:hover,
+.btn-simple:focus {
+  background-color: #3da1b6;
+  color: #474747;
+  color: rgba(71,71,71,0.95);
+}
+.btn-simple:active {
+  background-color: #3999ac;
+}
+.btn {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  font-size: 13px;
+  padding: 9.945px 21.879px;
+  -webkit-border-radius: 3.000002307694083px;
+  -moz-border-radius: 3.000002307694083px;
+  -ms-border-radius: 3.000002307694083px;
+  border-radius: 3.000002307694083px;
+  background: url("noise.png") repeat, #3999ac -webkit-gradient(linear, left top, left bottom, color-stop(0, #53b3c6), color-stop(1, #3999ac)) repeat-x;
+  background: url("noise.png") repeat, #3999ac -webkit-linear-gradient(top, #53b3c6 0%, #3999ac 100%) repeat-x;
+  background: url("noise.png") repeat, #3999ac -moz-linear-gradient(top, #53b3c6 0%, #3999ac 100%) repeat-x;
+  background: url("noise.png") repeat, #3999ac -ms-linear-gradient(top, #53b3c6 0%, #3999ac 100%) repeat-x;
+  background: url("noise.png") repeat, #3999ac linear-gradient(top, #53b3c6 0%, #3999ac 100%) repeat-x;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+  border: 1px solid #3999ac;
+  color: #494949;
+  color: rgba(73,73,73,0.95);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover,
+.btn:focus {
+  background-position: 0 -9.945px;
+  color: #474747;
+  color: rgba(71,71,71,0.95);
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+.btn:active {
+  -webkit-box-shadow: inset 0 1px 5px rgba(48,127,143,0.6);
+  -moz-box-shadow: inset 0 1px 5px rgba(48,127,143,0.6);
+  -ms-box-shadow: inset 0 1px 5px rgba(48,127,143,0.6);
+  box-shadow: inset 0 1px 5px rgba(48,127,143,0.6);
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+  border-color: #348b9d;
+}
+.btn.disabled,
+.btn-simple.disabled {
+  background: #ccc;
+  border-color: #b8b8b8;
+  -webkit-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  -moz-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn.disabled:hover,
+.btn-simple.disabled:hover {
+  background: #ccc;
+  background-position: 0 0;
+}
+.btn.disabled:active,
+.btn-simple.disabled:active {
+  background: #ccc;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  border-color: #b8b8b8;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format('embedded-opentype'), url("../fonts/icomoon.woff") format('woff'), url("../fonts/icomoon.ttf") format('truetype'), url("../fonts/icomoon.svg#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+[class*="icon-"]:before {
+  margin-right: 5px;
+}
+.icon-file-css,
+.icon-twitter,
+.icon-google-plus,
+.icon-facebook,
+.icon-vimeo,
+.icon-steam,
+.icon-github,
+.icon-linkedin,
+.icon-stackoverflow,
+.icon-pacman,
+.icon-library,
+.icon-bookmark,
+.icon-lightning,
+.icon-html5,
+.icon-css3,
+.icon-tag,
+.icon-office,
+.icon-pencil,
+.icon-bug,
+.icon-fire,
+.icon-lab,
+.icon-console,
+.icon-windows8,
+.icon-apple,
+.icon-android {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-abs:before {
+  position: absolute;
+}
+.icon-file-css:before {
+  content: "\e000";
+}
+.icon-twitter:before {
+  content: "\e003";
+}
+.icon-google-plus:before {
+  content: "\e004";
+}
+.icon-facebook:before {
+  content: "\e001";
+}
+.icon-vimeo:before {
+  content: "\e002";
+}
+.icon-steam:before {
+  content: "\e005";
+}
+.icon-github:before {
+  content: "\e006";
+}
+.icon-linkedin:before {
+  content: "\e007";
+}
+.icon-stackoverflow:before {
+  content: "\e008";
+}
+.icon-pacman:before {
+  content: "\e009";
+}
+.icon-library:before {
+  content: "\e00a";
+}
+.icon-bookmark:before {
+  content: "\e00b" !important;
+}
+.icon-lightning:before {
+  content: "\e00c";
+}
+.icon-html5:before {
+  content: "\e00d";
+}
+.icon-css3:before {
+  content: "\e00e";
+}
+.icon-tag:before {
+  content: "\e00f";
+}
+.icon-office:before {
+  content: "\e010";
+}
+.icon-pencil:before {
+  content: "\e011";
+}
+.icon-bug:before {
+  content: "\e012";
+}
+.icon-fire:before {
+  content: "\e013";
+}
+.icon-lab:before {
+  content: "\e014";
+}
+.icon-console:before {
+  content: "\e015";
+}
+.icon-windows8:before {
+  content: "\e016";
+}
+.icon-apple:before {
+  content: "\e017";
+}
+.icon-android:before {
+  content: "\e018";
+}
+.circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.btn-simple {
+  color: #fff;
+  margin: 3px;
+}
+.large-gap {
+  margin: 50px 0;
+}
+.popped-out {
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.popped-in {
+  -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
+  -moz-box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
+  -ms-box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
+}
 body {
-  padding: 50px;
-  background-color: #212a2c;
+  padding: 0;
+  background-image: url("../img/denim.jpg");
 }
 a {
   color: #40aabf;
+  text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: #b3dde6;
 }
 hr {
-  border-top-color: #b3dde6;
-  border-bottom-color: #40aabf;
+  border-top-color: #2b383b;
+  border-bottom-color: #555c5e;
+  border-left-color: transparent;
+  border-right-color: transparent;
   margin: 30px 0;
+}
+.row {
+  max-width: 100%;
+}
+section {
+  background-color: rgba(0,0,0,0.7);
+}
+.feed > article {
+  padding: 30px 0;
+  border-bottom: 1px solid #272727;
+}
+.feed-title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 3rem;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+.feed-date {
+  font-size: 0.4em;
+  margin-left: 10px;
+  color: #577075;
+}
+.feed-tags {
+  color: #808080;
 }

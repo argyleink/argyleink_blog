@@ -10,8 +10,10 @@ html
     
     link(rel='stylesheet', href='/css/master.css')
   body
-    h1= post.title
-    != yield
+    div.row
+      div.large-12.columns
+        h1= post.title
+        != yield
 
   //- add other scripts through require.js, not here
   script(data-main="js/main", src="js/require.js")

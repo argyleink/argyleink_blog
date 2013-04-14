@@ -1,37 +1,46 @@
-div.row
-	div.large-12.columns
+header.row
+	div.large-12.columns.popped-out
 		div.panel
-			h1 Feed Template
+			h1 Argyle Ink
 
-div.row
-	div.large-3.columns
+section.row
+	aside.large-4.columns.large-gap
 		div.panel
-			a(href="#")
-				img(src="http://placehold.it/300x240&text=[img]")
-			h5
-				a(href="https://coderbits.com/argyleink") Adam Argyle
+			figure
+				img.circle(src="http://placehold.it/300x300&text=[img]")
+			nav.social-links
+				a.btn-simple.icon-github(href="https://github.com/argyleink") Github
+				a.btn-simple.icon-bug(href="https://coderbits.com/argyleink") Coderbits
+				a.btn-simple.icon-file-css(href="https://coderwall.com/argyleink") Coderwall
+				a.btn-simple.icon-linkedin(href="www.linkedin.com/in/adamargyle/") Linked In
+				a.btn-simple.icon-twitter(href="https://twitter.com/argyleink") Twitter
+				a.btn-simple.icon-google-plus(href="https://plus.google.com/113556563890081284759/") Google+
+				a.btn-simple.icon-stackoverflow(href="http://stackoverflow.com/users/610219") Stack Overflow
 
-	div.large-6.columns
+	div.large-8.columns.feed.large-gap
 		for post in site.posts
-			div.row
-				div.large-2.columns.small-3
-					img(src="http://placehold.it/80x80&text=[img]")
-				div.large-10.columns
-					h1 
-						a(href="#{post.url}")= post.title
-					span #{post.date} 
-					span #{post.category}
-			hr
-	
-	aside.large-3.columns.hide-for-small
-		p
-			img(src="http://placehold.it/300x440&text=[project]")
-		p
-			img(src="http://placehold.it/300x440&text=[project]")
+			article.row
+				figure.large-2.columns.small-3
+					img.circle(src="#{post.heroimage}")
+				a(href="#{post.url}")
+					div.large-10.columns
+						h1.feed-title #{post.title}
+							span.feed-date #{post.date}
+						if post.category != null
+							span.feed-tags.icon-tag #{post.category}
+		for post in site.work
+			article.row
+				figure.large-2.columns.small-3
+					img.circle(src="#{post.heroimage}")
+				a(href="#{post.url}")
+					div.large-10.columns
+						h1.feed-title #{post.title}
+							span.feed-date #{post.date}
+						if post.category != null
+							span.feed-tags.icon-tag #{post.category}
 
 footer.row
-	div.large-12.columns
-		hr
+	div.large-12.columns.large-gap.popped-in
 		div.row
 			div.large-5.columns
 				p Site made with Roots.cx and Zurb Foundation

@@ -3,17 +3,52 @@
 
 normalize()
 base()
+buttons()
+
+@import 'icon-font'
+@import 'oo'
 
 body
-	padding: 50px
-	background-color: hsl(190, 15%, 15%);
+	padding: 0
+	// background-color: hsl(190, 5%, 25%);
+	background-image: url(../img/denim.jpg)
 
 a
 	color: blue
+	text-decoration: none
+	cursor: pointer
 a:hover
 	color: light-blue
 
 hr
-	border-top-color: light-blue
-	border-bottom-color: blue
+	border-top-color: hsl(190, 15%, 20%)
+	border-bottom-color: hsl(190, 5%, 35%)
+	border-left-color: transparent
+	border-right-color: transparent
 	margin: 30px 0
+
+.row
+	max-width: 100%
+
+section
+	background-color: hsla(0%,0,0,0.7)
+
+.feed > article {
+	padding:30px 0;
+	border-bottom:1px solid dark-grey
+}
+
+.feed-title
+	margin-top:10px
+	margin-bottom:15px
+	font-size: 3rem
+	font-weight: lighter
+	text-transform: capitalize
+
+.feed-date
+	font-size:0.4em
+	margin-left: 10px
+	color: hsl(190, 15%, 40%)
+
+.feed-tags
+	color: hsl(190, 0%, 50%)

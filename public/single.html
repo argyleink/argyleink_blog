@@ -15,48 +15,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="description" content="description of your site">
     <meta name="author" content="author of the site">
-    <title>project 1</title>
+    <title>post 2</title>
     <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
-    <h1>project 1</h1>
-<div class="row">
-  <div class="large-12 columns">
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>post 2</h1>
+<header class="row">
+  <div class="large-12 columns popped-out">
     <div class="panel">
-      <h1>Feed Template</h1>
+      <h1>Argyle Ink</h1>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="large-3 columns">
-    <div class="panel"><a href="#"><img src="http://placehold.it/300x240&amp;text=[img]"/></a>
-      <h5><a href="https://coderbits.com/argyleink">Adam Argyle</a></h5>
+</header>
+<section class="row">
+  <aside class="large-4 columns large-gap">
+    <div class="panel">
+      <figure><img src="http://placehold.it/300x300&amp;text=[img]" class="circle"/></figure>
+      <nav class="social-links"><a href="https://github.com/argyleink" class="btn-simple icon-github">Github</a><a href="https://coderbits.com/argyleink" class="btn-simple icon-bug">Coderbits</a><a href="https://coderwall.com/argyleink" class="btn-simple icon-file-css">Coderwall</a><a href="www.linkedin.com/in/adamargyle/" class="btn-simple icon-linkedin">Linked In</a><a href="https://twitter.com/argyleink" class="btn-simple icon-twitter">Twitter</a><a href="https://plus.google.com/113556563890081284759/" class="btn-simple icon-google-plus">Google+</a><a href="http://stackoverflow.com/users/610219" class="btn-simple icon-stackoverflow">Stack Overflow</a></nav>
     </div>
-  </div>
-  <div class="large-6 columns">
-    <div class="row">
-      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[img]"/></div>
-      <div class="large-10 columns">
-        <h1> <a href="/posts/hello_world.html">hello world</a></h1><span>1/1/2013 </span><span>hello,world</span>
-      </div>
-    </div>
-    <hr/>
-    <div class="row">
-      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[img]"/></div>
-      <div class="large-10 columns">
-        <h1> <a href="/posts/second_post.html">second post</a></h1><span>1/1/1970 </span><span></span>
-      </div>
-    </div>
-    <hr/>
-  </div>
-  <aside class="large-3 columns hide-for-small">
-    <p><img src="http://placehold.it/300x440&amp;text=[project]"/></p>
-    <p><img src="http://placehold.it/300x440&amp;text=[project]"/></p>
   </aside>
-</div>
+  <div class="large-8 columns feed large-gap">
+    <article class="row">
+      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[post 1]" class="circle"/></figure><a href="/posts/post1.html">
+        <div class="large-10 columns">
+          <h1 class="feed-title">Post 1<span class="feed-date">2.16.1986</span></h1><span class="feed-tags icon-tag">css, html</span>
+        </div></a>
+    </article>
+    <article class="row">
+      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[post 2]" class="circle"/></figure><a href="/posts/post2.html">
+        <div class="large-10 columns">
+          <h1 class="feed-title">post 2<span class="feed-date">7.21.1991</span></h1><span class="feed-tags icon-tag">javascript, css</span>
+        </div></a>
+    </article>
+    <article class="row">
+      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[project]" class="circle"/></figure><a href="/work/project.html">
+        <div class="large-10 columns">
+          <h1 class="feed-title">project 1<span class="feed-date">1/1/2013</span></h1><span class="feed-tags icon-tag">node, mongo, jquery, mustache</span>
+        </div></a>
+    </article>
+  </div>
+</section>
 <footer class="row">
-  <div class="large-12 columns">
-    <hr/>
+  <div class="large-12 columns large-gap popped-in">
     <div class="row">
       <div class="large-5 columns">
         <p>Site made with Roots.cx and Zurb Foundation</p>
@@ -64,9 +66,13 @@
     </div>
   </div>
 </footer>
+      </div>
+    </div>
   </body>
-  <script data-main="js/main" src="js/require.js"></script>
+  <script data-main="js/main" src="js/require.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
 </html>
   </body>
-  <script data-main="js/main" src="js/require.js"></script>
+  <script data-main="js/main" src="js/require.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
 </html>
