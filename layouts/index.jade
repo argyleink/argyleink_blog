@@ -1,0 +1,12 @@
+h1 my new blog
+dl 
+	for post in site.posts
+		dd
+			a(href="#{post.url}")= post.title
+
+hr
+
+h1 my work
+- each post in site.work
+	a(href="#{post.url}")= post.title
+	br
