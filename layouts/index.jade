@@ -1,12 +1,37 @@
-h1 my new blog
-dl 
-	for post in site.posts
-		dd
-			a(href="#{post.url}")= post.title
+div.row
+	div.large-12.columns
+		div.panel
+			h1 Feed Template
 
-hr
+div.row
+	div.large-3.columns
+		div.panel
+			a(href="#")
+				img(src="http://placehold.it/300x240&text=[img]")
+			h5
+				a(href="https://coderbits.com/argyleink") Adam Argyle
 
-h1 my work
-- each post in site.work
-	a(href="#{post.url}")= post.title
-	br
+	div.large-6.columns
+		for post in site.posts
+			div.row
+				div.large-2.columns.small-3
+					img(src="http://placehold.it/80x80&text=[img]")
+				div.large-10.columns
+					h1 
+						a(href="#{post.url}")= post.title
+					span #{post.date} 
+					span #{post.category}
+			hr
+	
+	aside.large-3.columns.hide-for-small
+		p
+			img(src="http://placehold.it/300x440&text=[ad]")
+		p
+			img(src="http://placehold.it/300x440&text=[ad]")
+
+footer.row
+	div.large-12.columns
+		hr
+		div.row
+			div.large-5.columns
+				p Site made with Roots.cx and Zurb Foundation
