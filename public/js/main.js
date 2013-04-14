@@ -1,17 +1,14 @@
-(function() {
-  console.log("hello from a require'd coffee file <-- via assets/js/_helper.coffee");
+var argyleink = {};
 
-}).call(this);
+argyleink.scriptsLoaded = function() {
+	argyleink.nav = responsiveNav("#nav", { 
+		label: 			"Menu", 	// String: Label for the navigation toggle
+		insert: 		"after", 	// String: Insert the toggle before or after the navigation
+		customToggle: 	"toggle", 	// Selector: Specify the ID of a custom toggle
+		init: function(){}, 		// Function: Init callback
+		open: function(){}, 		// Function: Open callback
+		close: function(){} 		// Function: Close callback
+	});
+}
 
-(function() {
-  var js;
-
-  js = ["http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"];
-
-  require(js, function() {
-    return $(function() {
-      return console.log('jquery loaded, dom ready <-- via assets/js/main.coffee');
-    });
-  });
-
-}).call(this);
+require(["js/responsive-nav.min.js"], argyleink.scriptsLoaded);

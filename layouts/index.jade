@@ -1,13 +1,19 @@
-header.row
-	div.large-12.columns.popped-out
-		div.panel
-			h1 Argyle Ink
+nav#nav(role="navigation")
+	ul
+		li.active
+			a(href="#") Home
+		li
+			a(href="#") Something
 
-section.row
+section.main(role="main")
+	header.popped-out
+		h1 Argyle Ink
+		a#toggle(href="#nav") Menu
+
 	aside.large-4.columns.large-gap
 		div.panel
 			figure
-				img.circle(src="http://placehold.it/300x300&text=[img]")
+				img.circle(src="http://placehold.it/200x200&text=[img]")
 			nav.social-links
 				a.btn-simple.icon-github(href="https://github.com/argyleink") Github
 				a.btn-simple.icon-bug(href="https://coderbits.com/argyleink") Coderbits
@@ -39,8 +45,8 @@ section.row
 						if post.category != null
 							span.feed-tags.icon-tag #{post.category}
 
-footer.row
-	div.large-12.columns.large-gap.popped-in
-		div.row
-			div.large-5.columns
-				p Site made with Roots.cx and Zurb Foundation
+	footer.row
+		div.large-12.columns.large-gap.popped-in
+			div.row
+				div.large-5.columns
+					p Site made with Roots.cx

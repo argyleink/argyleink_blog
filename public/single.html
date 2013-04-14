@@ -4,8 +4,9 @@
     <meta charset="utf8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="description" content="description of your site">
-    <meta name="author" content="author of the site">
-    <title>welcome to roots!</title>
+    <meta name="author" content="Adam Argyle">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ArgyleInk Labs</title>
     <link rel="stylesheet" href="/css/master.css">
   </head>
   <body><!DOCTYPE html>
@@ -22,17 +23,19 @@
     <div class="row">
       <div class="large-12 columns">
         <h1>post 2</h1>
-<header class="row">
-  <div class="large-12 columns popped-out">
-    <div class="panel">
-      <h1>Argyle Ink</h1>
-    </div>
-  </div>
-</header>
-<section class="row">
+<nav id="nav" role="navigation">
+  <ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Something</a></li>
+  </ul>
+</nav>
+<section role="main" class="main">
+  <header class="popped-out">
+    <h1>Argyle Ink</h1><a id="toggle" href="#nav">Menu</a>
+  </header>
   <aside class="large-4 columns large-gap">
     <div class="panel">
-      <figure><img src="http://placehold.it/300x300&amp;text=[img]" class="circle"/></figure>
+      <figure><img src="http://placehold.it/200x200&amp;text=[img]" class="circle"/></figure>
       <nav class="social-links"><a href="https://github.com/argyleink" class="btn-simple icon-github">Github</a><a href="https://coderbits.com/argyleink" class="btn-simple icon-bug">Coderbits</a><a href="https://coderwall.com/argyleink" class="btn-simple icon-file-css">Coderwall</a><a href="www.linkedin.com/in/adamargyle/" class="btn-simple icon-linkedin">Linked In</a><a href="https://twitter.com/argyleink" class="btn-simple icon-twitter">Twitter</a><a href="https://plus.google.com/113556563890081284759/" class="btn-simple icon-google-plus">Google+</a><a href="http://stackoverflow.com/users/610219" class="btn-simple icon-stackoverflow">Stack Overflow</a></nav>
     </div>
   </aside>
@@ -56,16 +59,16 @@
         </div></a>
     </article>
   </div>
-</section>
-<footer class="row">
-  <div class="large-12 columns large-gap popped-in">
-    <div class="row">
-      <div class="large-5 columns">
-        <p>Site made with Roots.cx and Zurb Foundation</p>
+  <footer class="row">
+    <div class="large-12 columns large-gap popped-in">
+      <div class="row">
+        <div class="large-5 columns">
+          <p>Site made with Roots.cx</p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+</section>
       </div>
     </div>
   </body>

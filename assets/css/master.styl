@@ -1,5 +1,4 @@
 @import '_settings'
-@import 'foundation.min.css'
 
 normalize()
 base()
@@ -7,11 +6,11 @@ buttons()
 
 @import 'icon-font'
 @import 'oo'
+@import 'responsive-nav'
 
 body
 	padding: 0
-	// background-color: hsl(190, 5%, 25%);
-	background-image: url(../img/denim.jpg)
+	background: #444 url(../img/debut_dark.png) repeat
 
 a
 	color: blue
@@ -33,10 +32,9 @@ hr
 section
 	background-color: hsla(0%,0,0,0.7)
 
-.feed > article {
-	padding:30px 0;
+.feed > article
+	padding:30px 0
 	border-bottom:1px solid dark-grey
-}
 
 .feed-title
 	margin-top:10px
