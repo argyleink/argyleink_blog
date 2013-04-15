@@ -1,0 +1,31 @@
+.carousel
+    overflow: hidden
+    -ms-touch-action: none
+    width:100%
+    margin: 0 0 1px 0
+    padding: 25px
+    background-color: rgba(0,0,0,0.1)
+    backface-visibility: hidden
+    transform: translate3d(0,0,0) scale3d(1,1,1)
+    transform-style: preserve-3d
+
+.carousel ol.animate 
+    transition: all .3s
+
+.carousel ol
+    padding:0
+    margin:0
+    transform: translate3d(0%,0,0) scale3d(1,1,1)
+    overflow: hidden
+    backface-visibility: hidden
+    transform-style: preserve-3d
+
+.carousel.out ol
+    transform: translateX(100%)
+
+.carousel li 
+    height: 100%
+    text-align: center
+    overflow: hidden
+    transform-style: preserve-3d
+    transform: translate3d(0,0,0)
