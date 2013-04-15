@@ -2,6 +2,12 @@
 	box-sizing: border-box
 	position: relative
 
+.light-blue-border
+	border: 1px solid light-blue
+
+.blue-border
+	border: 1px solid blue
+
 .flex
 	display: -webkit-box      /* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -43,6 +49,14 @@
 	overflow-y:auto
 	overflow-x:hidden
 
+.no-select
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
 .circle
 	border-radius:50%
 
@@ -58,3 +72,5 @@
 .top-radial
 	background-image: radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.3), rgba(0,0,0,0))
 
+.bottom-radial
+	background-image: radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.3), rgba(0,0,0,0))

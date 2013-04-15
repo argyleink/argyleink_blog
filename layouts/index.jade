@@ -1,37 +1,26 @@
-header
+header.bottom-radial
 	nav#nav.flex
 		h1.flex2 Argyle Ink
-		a.popped-out.btn-simple.flex1(href="#") Home
-		a.popped-out.btn-simple.flex1(href="#") Something
+		a.popped-out.btn-simple(href="#") Home
+		a.popped-out.btn-simple(href="#") Something
 
 div.main
 	
-	//- aside.large-gap
-	//- 	figure
-	//- 		img.circle(src="http://placehold.it/200x200&text=[img]")
-	//- 	nav.social-links
-	//- 		a.btn-simple.icon-github(href="https://github.com/argyleink") Github
-	//- 		a.btn-simple.icon-bug(href="https://coderbits.com/argyleink") Coderbits
-	//- 		a.btn-simple.icon-file-css(href="https://coderwall.com/argyleink") Coderwall
-	//- 		a.btn-simple.icon-linkedin(href="www.linkedin.com/in/adamargyle/") Linked In
-	//- 		a.btn-simple.icon-twitter(href="https://twitter.com/argyleink") Twitter
-	//- 		a.btn-simple.icon-google-plus(href="https://plus.google.com/113556563890081284759/") Google+
-	//- 		a.btn-simple.icon-stackoverflow(href="http://stackoverflow.com/users/610219") Stack Overflow
-
-	section#social.carousel.out.popped-in.top-radial
+	section#social.carousel.out.popped-in.top-radial.no-select
 		ol.animate.flex
 			for post in site.social
 				li
 					figure
-						img.circle(src="#{post.picture}")
+						img.feed-image.circle.light-blue-border(src="#{post.picture}")
 					div
-						a(href="#{post.url}")
-							h1.feed-title #{post.title}
+						h1.feed-title #{post.title}
+						h5.feed-tagline #{post.tagline}
+						a.btn-simple(href="#{post.profileUrl}", target="_blank") Launch
 
-	section#posts.carousel.out.popped-in.top-radial
+	section#posts.carousel.out.popped-in
 		ol.animate.flex
 			for post in site.posts
-				li
+				li.no-select
 					figure
 						img.circle(src="#{post.heroimage}")
 					div
@@ -41,10 +30,10 @@ div.main
 						if post.category != null
 							span.feed-tags.icon-tag #{post.category}
 
-	section#work.carousel.out.popped-in.top-radial
+	section#work.carousel.out.popped-in.bottom-radial
 		ol.animate.flex
 			for post in site.work
-				li
+				li.no-select
 					figure
 						img.circle(src="#{post.heroimage}")
 					div
@@ -54,5 +43,5 @@ div.main
 						if post.category != null
 							span.feed-tags.icon-tag #{post.category}
 
-footer
+footer.top-radial
 	p Site made with Roots.cx
