@@ -1,52 +1,58 @@
-nav#nav(role="navigation")
-	ul
-		li.active
-			a(href="#") Home
-		li
-			a(href="#") Something
+header
+	nav#nav.flex
+		h1.flex2 Argyle Ink
+		a.popped-out.btn-simple.flex1(href="#") Home
+		a.popped-out.btn-simple.flex1(href="#") Something
 
-section.main(role="main")
-	header.popped-out
-		h1 Argyle Ink
-		a#toggle(href="#nav") Menu
+div.main
+	
+	//- aside.large-gap
+	//- 	figure
+	//- 		img.circle(src="http://placehold.it/200x200&text=[img]")
+	//- 	nav.social-links
+	//- 		a.btn-simple.icon-github(href="https://github.com/argyleink") Github
+	//- 		a.btn-simple.icon-bug(href="https://coderbits.com/argyleink") Coderbits
+	//- 		a.btn-simple.icon-file-css(href="https://coderwall.com/argyleink") Coderwall
+	//- 		a.btn-simple.icon-linkedin(href="www.linkedin.com/in/adamargyle/") Linked In
+	//- 		a.btn-simple.icon-twitter(href="https://twitter.com/argyleink") Twitter
+	//- 		a.btn-simple.icon-google-plus(href="https://plus.google.com/113556563890081284759/") Google+
+	//- 		a.btn-simple.icon-stackoverflow(href="http://stackoverflow.com/users/610219") Stack Overflow
 
-	aside.large-4.columns.large-gap
-		div.panel
-			figure
-				img.circle(src="http://placehold.it/200x200&text=[img]")
-			nav.social-links
-				a.btn-simple.icon-github(href="https://github.com/argyleink") Github
-				a.btn-simple.icon-bug(href="https://coderbits.com/argyleink") Coderbits
-				a.btn-simple.icon-file-css(href="https://coderwall.com/argyleink") Coderwall
-				a.btn-simple.icon-linkedin(href="www.linkedin.com/in/adamargyle/") Linked In
-				a.btn-simple.icon-twitter(href="https://twitter.com/argyleink") Twitter
-				a.btn-simple.icon-google-plus(href="https://plus.google.com/113556563890081284759/") Google+
-				a.btn-simple.icon-stackoverflow(href="http://stackoverflow.com/users/610219") Stack Overflow
+	section#social.carousel.out.popped-in.top-radial
+		ol.animate.flex
+			for post in site.social
+				li
+					figure
+						img.circle(src="#{post.picture}")
+					div
+						a(href="#{post.url}")
+							h1.feed-title #{post.title}
 
-	div.large-8.columns.feed.large-gap
-		for post in site.posts
-			article.row
-				figure.large-2.columns.small-3
-					img.circle(src="#{post.heroimage}")
-				a(href="#{post.url}")
-					div.large-10.columns
-						h1.feed-title #{post.title}
-							span.feed-date #{post.date}
-						if post.category != null
-							span.feed-tags.icon-tag #{post.category}
-		for post in site.work
-			article.row
-				figure.large-2.columns.small-3
-					img.circle(src="#{post.heroimage}")
-				a(href="#{post.url}")
-					div.large-10.columns
-						h1.feed-title #{post.title}
-							span.feed-date #{post.date}
+	section#posts.carousel.out.popped-in.top-radial
+		ol.animate.flex
+			for post in site.posts
+				li
+					figure
+						img.circle(src="#{post.heroimage}")
+					div
+						a(href="#{post.url}")
+							h1.feed-title #{post.title}
+								span.feed-date #{post.date}
 						if post.category != null
 							span.feed-tags.icon-tag #{post.category}
 
-	footer.row
-		div.large-12.columns.large-gap.popped-in
-			div.row
-				div.large-5.columns
-					p Site made with Roots.cx
+	section#work.carousel.out.popped-in.top-radial
+		ol.animate.flex
+			for post in site.work
+				li
+					figure
+						img.circle(src="#{post.heroimage}")
+					div
+						a(href="#{post.url}")
+							h1.feed-title #{post.title}
+								span.feed-date #{post.date}
+						if post.category != null
+							span.feed-tags.icon-tag #{post.category}
+
+footer
+	p Site made with Roots.cx

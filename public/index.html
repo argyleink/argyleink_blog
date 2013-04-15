@@ -10,52 +10,62 @@
     <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
-<nav id="nav" role="navigation">
-  <ul>
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Something</a></li>
-  </ul>
-</nav>
-<section role="main" class="main">
-  <header class="popped-out">
-    <h1>Argyle Ink</h1><a id="toggle" href="#nav">Menu</a>
-  </header>
-  <aside class="large-4 columns large-gap">
-    <div class="panel">
-      <figure><img src="http://placehold.it/200x200&amp;text=[img]" class="circle"/></figure>
-      <nav class="social-links"><a href="https://github.com/argyleink" class="btn-simple icon-github">Github</a><a href="https://coderbits.com/argyleink" class="btn-simple icon-bug">Coderbits</a><a href="https://coderwall.com/argyleink" class="btn-simple icon-file-css">Coderwall</a><a href="www.linkedin.com/in/adamargyle/" class="btn-simple icon-linkedin">Linked In</a><a href="https://twitter.com/argyleink" class="btn-simple icon-twitter">Twitter</a><a href="https://plus.google.com/113556563890081284759/" class="btn-simple icon-google-plus">Google+</a><a href="http://stackoverflow.com/users/610219" class="btn-simple icon-stackoverflow">Stack Overflow</a></nav>
-    </div>
-  </aside>
-  <div class="large-8 columns feed large-gap">
-    <article class="row">
-      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[post 1]" class="circle"/></figure><a href="/posts/post1.html">
-        <div class="large-10 columns">
-          <h1 class="feed-title">Post 1<span class="feed-date">2.16.1986</span></h1><span class="feed-tags icon-tag">css, html</span>
-        </div></a>
-    </article>
-    <article class="row">
-      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[post 2]" class="circle"/></figure><a href="/posts/post2.html">
-        <div class="large-10 columns">
-          <h1 class="feed-title">post 2<span class="feed-date">7.21.1991</span></h1><span class="feed-tags icon-tag">javascript, css</span>
-        </div></a>
-    </article>
-    <article class="row">
-      <figure class="large-2 columns small-3"><img src="http://placehold.it/80x80&amp;text=[project]" class="circle"/></figure><a href="/work/project.html">
-        <div class="large-10 columns">
-          <h1 class="feed-title">project 1<span class="feed-date">1/1/2013</span></h1><span class="feed-tags icon-tag">node, mongo, jquery, mustache</span>
-        </div></a>
-    </article>
-  </div>
-  <footer class="row">
-    <div class="large-12 columns large-gap popped-in">
-      <div class="row">
-        <div class="large-5 columns">
-          <p>Site made with Roots.cx</p>
+<header>
+  <nav id="nav" class="flex">
+    <h1 class="flex2">Argyle Ink</h1><a href="#" class="popped-out btn-simple flex1">Home</a><a href="#" class="popped-out btn-simple flex1">Something</a>
+  </nav>
+</header>
+<div class="main">
+  <section id="social" class="carousel out popped-in top-radial">
+    <ol class="animate flex">
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[profile]" class="circle"/></figure>
+        <div><a href="/social/github.html">
+            <h1 class="feed-title">Github</h1></a></div>
+      </li>
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[profile]" class="circle"/></figure>
+        <div><a href="/social/linkedin.html">
+            <h1 class="feed-title">LinkedIn</h1></a></div>
+      </li>
+    </ol>
+  </section>
+  <section id="posts" class="carousel out popped-in top-radial">
+    <ol class="animate flex">
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[post 1]" class="circle"/></figure>
+        <div><a href="/posts/post1.html">
+            <h1 class="feed-title">Post 1<span class="feed-date">2.16.1986</span></h1></a><span class="feed-tags icon-tag">css, html</span>
         </div>
-      </div>
-    </div>
-  </footer>
-</section>
+      </li>
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[post 2]" class="circle"/></figure>
+        <div><a href="/posts/post2.html">
+            <h1 class="feed-title">post 2<span class="feed-date">7.21.1991</span></h1></a><span class="feed-tags icon-tag">javascript, css</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section id="work" class="carousel out popped-in top-radial">
+    <ol class="animate flex">
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[project]" class="circle"/></figure>
+        <div><a href="/work/project.html">
+            <h1 class="feed-title">project 1<span class="feed-date">1/1/2013</span></h1></a><span class="feed-tags icon-tag">node, mongo, jquery, mustache</span>
+        </div>
+      </li>
+      <li>
+        <figure><img src="http://placehold.it/80x80&amp;text=[project 2]" class="circle"/></figure>
+        <div><a href="/work/project2.html">
+            <h1 class="feed-title">project 2<span class="feed-date">1/1/2015</span></h1></a><span class="feed-tags icon-tag">something, something, something</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+</div>
+<footer>
+  <p>Site made with Roots.cx</p>
+</footer>
   </body>
   <script data-main="js/main" src="js/require.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
 socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
