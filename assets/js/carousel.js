@@ -24,6 +24,9 @@ function Carousel(element,callback)
             setPaneDimensions();
             //updateOffset();
         })
+
+        Hammer(element, { drag_lock_to_axis: true })
+            .on("release dragleft dragright swipeleft swiperight", handleHammer);
     };
 
 
@@ -124,7 +127,4 @@ function Carousel(element,callback)
                 break;
         }
     }
-
-    Hammer(element, { drag_lock_to_axis: true })
-        .on("release dragleft dragright swipeleft swiperight", handleHammer);
 }
