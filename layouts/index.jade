@@ -1,8 +1,6 @@
 header.bottom-radial
 	nav#nav.flex
-		h1.flex2 Argyle Ink
-		a.popped-out.btn-simple(href="#") Home
-		a.popped-out.btn-simple(href="#") Something
+		h1.flex-center Argyle Ink
 
 div.main
 	
@@ -12,36 +10,38 @@ div.main
 				li
 					figure
 						img.feed-image.circle.light-blue-border(src="#{post.picture}")
-					div
+					div.feed-meta
 						h1.feed-title #{post.title}
-						h5.feed-tagline #{post.tagline}
-						a.btn-simple(href="#{post.profileUrl}", target="_blank") Launch
-
-	section#posts.carousel.out.popped-in
-		ol.animate.flex
-			for post in site.posts
-				li.no-select
-					figure
-						img.circle(src="#{post.heroimage}")
-					div
-						a(href="#{post.url}")
-							h1.feed-title #{post.title}
-								span.feed-date #{post.date}
-						if post.category != null
-							span.feed-tags.icon-tag #{post.category}
+						h5.feed-tags #{post.tagline}
+						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
 
 	section#work.carousel.out.popped-in.bottom-radial
 		ol.animate.flex
 			for post in site.work
 				li.no-select
 					figure
-						img.circle(src="#{post.heroimage}")
-					div
+						img.feed-image.circle(src="#{post.heroimage}")
+					div.feed-meta
 						a(href="#{post.url}")
 							h1.feed-title #{post.title}
-								span.feed-date #{post.date}
 						if post.category != null
-							span.feed-tags.icon-tag #{post.category}
+							h5.feed-tags.icon-tag #{post.category}
+							span.feed-date #{post.date}
+					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
+
+	section#posts.carousel.out.popped-in
+		ol.animate.flex
+			for post in site.posts
+				li.no-select
+					figure
+						img.feed-image.circle(src="#{post.heroimage}")
+					div.feed-meta
+						a(href="#{post.url}")
+							h1.feed-title #{post.title}
+						if post.category != null
+							h5.feed-tags.icon-tag #{post.category}
+						p #{post.excerpt}
+							span.feed-date Posted: #{post.date}
+						a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
 footer.top-radial
-	p Site made with Roots.cx

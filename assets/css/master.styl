@@ -5,6 +5,7 @@ base()
 buttons()
 
 @import 'icon-font'
+@import 'roots-css/animation'
 @import 'oo'
 @import 'retina'
 @import 'carousel'
@@ -32,15 +33,27 @@ nav
 	padding:0.5em 1em
 
 nav > h1
+	animation: tada 0.6s ease-in-out-quart 1.3s
 	margin: 3px
+	font-size: 3rem
+	color: #282828
+	font-weight: lighter
+	text-shadow: 0 1px 0 rgba(255,255,255,0.1),
+				 0 -1px 0 rgba(0,0,0,0.7)
 
 .btn-simple
 	color:white
 	margin:3px
 
+.feed-launch
+	margin-top: 2em
+
 .feed > article
 	padding:30px 0
 	border-bottom:1px solid dark-grey
+
+.feed-meta
+	padding: 0 2em
 
 .feed-image
 	max-width: 82px
@@ -53,14 +66,13 @@ nav > h1
 	font-weight: lighter
 	text-transform: capitalize
 
-.feed-tagline
-	margin-top:0
-	color:hsl(190, 0%, 50%)
-
 .feed-date
-	font-size:0.4em
+	font-size:0.7em
 	margin-left: 10px
 	color: hsl(190, 15%, 40%)
 
 .feed-tags
+	margin: 0
+	padding: 0 1em
 	color: hsl(190, 0%, 50%)
+	normal()
