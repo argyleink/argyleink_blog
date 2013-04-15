@@ -12,7 +12,7 @@ argyleink.scriptsLoaded = function() {
 
 require(
 	[
-		  "http://raw.github.com/EightMedia/hammer.js/master/dist/jquery.hammer.min.js"
+		  "js/jquery.hammer.min.js"
 		, "http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"
 		, "js/requestAnimationFrame.js"
 		, "js/carousel.js"
