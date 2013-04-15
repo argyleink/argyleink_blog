@@ -15,7 +15,7 @@ div.main
 						h5.feed-tags #{post.tagline}
 						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
 
-	section#work.carousel.out.popped-in.bottom-radial
+	section#work.carousel.out.popped-in
 		ol.animate.flex
 			for post in site.work
 				li.no-select
@@ -29,7 +29,7 @@ div.main
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
-	section#posts.carousel.out.popped-in
+	section#posts.carousel.out.popped-in.bottom-radial
 		ol.animate.flex
 			for post in site.posts
 				li.no-select
