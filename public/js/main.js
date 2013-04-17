@@ -1,5 +1,9 @@
 var argyleink = {};
 
+argyleink.baseScriptsLoaded = function() {
+	require(["js/carousel.js"], argyleink.scriptsLoaded);
+}
+
 argyleink.scriptsLoaded = function() {
 	argyleink.socialCarousel = new Carousel("#social", carouselReady).init();
 	argyleink.postsCarousel = new Carousel("#posts", carouselReady).init();
@@ -12,10 +16,9 @@ argyleink.scriptsLoaded = function() {
 
 require(
 	[
-		  "js/jquery.hammer.min.js"
-		, "http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"
-		, "js/requestAnimationFrame.js"
-		, "js/carousel.js"
+		  "js/zepto.min.js"
+		, "js/hammer.min.js"
+		//, "js/requestAnimationFrame.js"
 	], 
-	argyleink.scriptsLoaded
+	argyleink.baseScriptsLoaded
 );

@@ -13,6 +13,17 @@ function Carousel(element,callback)
 
     var current_pane = 0;
 
+    var supportsTransitions  = (function() {
+        var s = document.createElement('p').style, // 's' for style. better to create an element if body yet to exist
+            v = ['ms','O','Moz','Webkit']; // 'v' for vendor
+
+        if( s['transition'] == '' ) return true; // check first for prefeixed-free support
+        while( v.length ) // now go over the list of vendor prefixes and check support until one is found
+            if( v.pop() + 'Transition' in s )
+                return true;
+        return false;
+    })();
+
 
     /**
      * initial
@@ -64,11 +75,8 @@ function Carousel(element,callback)
             container.addClass("animate");
         }
 
-        if(Modernizr.csstransforms3d) {
+        if(supportsTransitions) {
             container.css("transform", "translate3d("+ percent +"%,0,0) scale3d(1,1,1)");
-        }
-        else if(Modernizr.csstransforms) {
-            container.css("transform", "translate("+ percent +"%,0)");
         }
         else {
             var px = ((pane_width*pane_count) / 100) * percent;
