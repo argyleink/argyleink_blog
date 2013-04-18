@@ -8,6 +8,7 @@ argyleink.scriptsLoaded = function() {
 	argyleink.socialCarousel = new Carousel("#social", carouselReady).init();
 	argyleink.postsCarousel = new Carousel("#posts", carouselReady).init();
 	argyleink.workCarousel = new Carousel("#work", carouselReady).init();
+	argyleink.labsCarousel = new Carousel("#labs", carouselReady).init();
 
 	function carouselReady(el) {
 		$(el).removeClass('out');

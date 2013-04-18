@@ -25,6 +25,20 @@ div.main
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
+	section#labs.carousel.out.popped-in
+		ol.animate.flex
+			for post in site.labs
+				li.no-select
+					figure
+						img.feed-image.circle(src="#{post.heroimage}")
+					div.feed-meta
+						a(href="#{post.url}")
+							h1.feed-title #{post.title}
+						if post.category != null
+							h5.feed-tags.icon-tag #{post.category}
+							span.feed-date #{post.date}
+					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
+
 	section#posts.carousel.out.popped-in.bottom-radial
 		ol.animate.flex
 			for post in site.posts
