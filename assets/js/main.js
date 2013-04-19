@@ -1,7 +1,21 @@
-var argyleink = {};
+var argyleink 	= {}
+  , baseScripts
+  , appScripts;
+
+baseScripts = [
+	  "js/zepto.min.js"
+	, "js/hammer.min.js"
+	, "js/prefix.js"
+	//, "js/requestAnimationFrame.js"
+];
+
+appScripts = [
+	  "js/carousel.js"
+	, "menu" 
+];
 
 argyleink.baseScriptsLoaded = function() {
-	require(["js/carousel.js"], argyleink.scriptsLoaded);
+	require(appScripts, argyleink.scriptsLoaded);
 }
 
 argyleink.scriptsLoaded = function() {
@@ -13,13 +27,18 @@ argyleink.scriptsLoaded = function() {
 	function carouselReady(el) {
 		$(el).removeClass('out');
 	}
+
+	argyleink.init();
 }
 
-require(
-	[
-		  "js/zepto.min.js"
-		, "js/hammer.min.js"
-		//, "js/requestAnimationFrame.js"
-	], 
-	argyleink.baseScriptsLoaded
-);
+argyleink.init = function() {
+	argyleink.initListeners();
+}
+
+argyleink.initListeners = function() {
+	Hammer(document.body).on("pinchin", function() {
+	    alert('show menu');
+	});
+}
+
+require(baseScripts, argyleink.baseScriptsLoaded);

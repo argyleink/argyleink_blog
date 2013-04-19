@@ -1,4 +1,17 @@
-<!DOCTYPE html><html><head><meta charset="utf8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="description" content="description of your site"><meta name="author" content="author of the site"><title>Die Ants Die!</title><link rel="stylesheet" href="/css/master.css"></head><body><div class="row"><div class="large-12 columns"><h1>Die Ants Die!</h1><ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="description of your site">
+    <meta name="author" content="author of the site">
+    <title>Die Ants Die!</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Die Ants Die!</h1><ul>
 <li><a href="https://play.google.com/store/apps/details?id=air.DieBugsDie&amp;hl=en">Android</a></li>
 <li><a href="http://itunes.apple.com/us/app/die-ants-die/id429576768?mt=8?iframe=true&amp;width=95%&amp;height=95%">iOS</a></li>
 <li><a href="http://argyleink.com/dieantsdie/">Web</a></li>
@@ -20,4 +33,10 @@
 <li><p>Tons of ants</p>
 </li>
 </ul>
-</div></div></body><script data-main="js/main" src="js/require.js"></script></html>
+
+      </div>
+    </div>
+  </body>
+  <script data-main="js/main" src="js/require.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
+</html>

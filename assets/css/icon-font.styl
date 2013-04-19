@@ -21,7 +21,8 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-[class*="icon-"]:before {
+[class*="icon-"]:before,
+[data-icon]:before {
 	margin-right:5px;
 }
 
@@ -31,7 +32,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-file-css, .icon-twitter, .icon-google-plus, .icon-facebook, .icon-vimeo, .icon-steam, .icon-github, .icon-linkedin, .icon-stackoverflow, .icon-pacman, .icon-library, .icon-bookmark, .icon-lightning, .icon-html5, .icon-css3, .icon-tag, .icon-office, .icon-pencil, .icon-bug, .icon-fire, .icon-lab, .icon-console, .icon-windows8, .icon-apple, .icon-android {
+.icon-file-css, .icon-twitter, .icon-google-plus, .icon-facebook, .icon-vimeo, .icon-steam, .icon-github, .icon-linkedin, .icon-stackoverflow, .icon-library, .icon-bookmark, .icon-lightning, .icon-html5, .icon-css3, .icon-tag, .icon-office, .icon-pencil, .icon-bug, .icon-fire, .icon-lab, .icon-console, .icon-windows8, .icon-apple, .icon-android, .icon-home, .icon-book, .icon-screen, .icon-laptop, .icon-mobile, .icon-mobile-2, .icon-tablet, .icon-arrow-right, .icon-arrow-left, .icon-arrow-up, .icon-code, .icon-menu {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -41,81 +42,111 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-abs:before {
-	position:absolute;
-}
 .icon-file-css:before {
-	content: "\e000";
+	content: "\63";
 }
 .icon-twitter:before {
-	content: "\e003";
+	content: "\74";
 }
 .icon-google-plus:before {
-	content: "\e004";
+	content: "\67";
 }
 .icon-facebook:before {
-	content: "\e001";
+	content: "\66";
 }
 .icon-vimeo:before {
-	content: "\e002";
+	content: "\76";
 }
 .icon-steam:before {
-	content: "\e005";
+	content: "\73";
 }
 .icon-github:before {
-	content: "\e006";
+	content: "\68";
 }
 .icon-linkedin:before {
-	content: "\e007";
+	content: "\6c";
 }
 .icon-stackoverflow:before {
-	content: "\e008";
-}
-.icon-pacman:before {
-	content: "\e009";
+	content: "\6f";
 }
 .icon-library:before {
-	content: "\e00a";
+	content: "\77";
 }
 .icon-bookmark:before {
-	content: "\e00b" !important;
+	content: "\62";
 }
 .icon-lightning:before {
-	content: "\e00c";
+	content: "\4c";
 }
 .icon-html5:before {
-	content: "\e00d";
+	content: "\48";
 }
 .icon-css3:before {
-	content: "\e00e";
+	content: "\43";
 }
 .icon-tag:before {
-	content: "\e00f";
+	content: "\54";
 }
 .icon-office:before {
-	content: "\e010";
+	content: "\4f";
 }
 .icon-pencil:before {
-	content: "\e011";
+	content: "\50";
 }
 .icon-bug:before {
-	content: "\e012";
+	content: "\42";
 }
 .icon-fire:before {
-	content: "\e013";
+	content: "\46";
 }
 .icon-lab:before {
-	content: "\e014";
+	content: "\61";
 }
 .icon-console:before {
-	content: "\e015";
+	content: "\65";
 }
 .icon-windows8:before {
-	content: "\e016";
+	content: "\57";
 }
 .icon-apple:before {
-	content: "\e017";
+	content: "\41";
 }
 .icon-android:before {
-	content: "\e018";
+	content: "\64";
+}
+.icon-home:before {
+	content: "\21";
+}
+.icon-book:before {
+	content: "\22";
+}
+.icon-screen:before {
+	content: "\23";
+}
+.icon-laptop:before {
+	content: "\24";
+}
+.icon-mobile:before {
+	content: "\25";
+}
+.icon-mobile-2:before {
+	content: "\26";
+}
+.icon-tablet:before {
+	content: "\27";
+}
+.icon-arrow-right:before {
+	content: "\28";
+}
+.icon-arrow-left:before {
+	content: "\29";
+}
+.icon-arrow-up:before {
+	content: "\2a";
+}
+.icon-code:before {
+	content: "\2b";
+}
+.icon-menu:before {
+	content: "\2c";
 }

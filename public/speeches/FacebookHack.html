@@ -1,2 +1,21 @@
-<!DOCTYPE html><html><head><meta charset="utf8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="description" content="description of your site"><meta name="author" content="author of the site"><title>Facebook Hackathon Interview</title><link rel="stylesheet" href="/css/master.css"></head><body><div class="row"><div class="large-12 columns"><h1>Facebook Hackathon Interview</h1><p><a href="http://channel9.msdn.com/Events/Facebook-and-Windows-8-Hackathon/Facebook-and-Windows-8-Hackathon?d=1">Watch the Interview</a></p>
-</div></div></body><script data-main="js/main" src="js/require.js"></script></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="description of your site">
+    <meta name="author" content="author of the site">
+    <title>Facebook Hackathon Interview</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Facebook Hackathon Interview</h1><p><a href="http://channel9.msdn.com/Events/Facebook-and-Windows-8-Hackathon/Facebook-and-Windows-8-Hackathon?d=1">Watch the Interview</a></p>
+
+      </div>
+    </div>
+  </body>
+  <script data-main="js/main" src="js/require.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
+</html>

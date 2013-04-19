@@ -21,7 +21,7 @@ div.main
 						a(href="#{post.url}")
 							h1.feed-title #{post.title}
 						if post.category != null
-							h5.feed-tags.icon-tag #{post.category}
+							h5.feed-tags(data-icon="T") #{post.category}
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
@@ -35,7 +35,7 @@ div.main
 						a(href="#{post.url}")
 							h1.feed-title #{post.title}
 						if post.category != null
-							h5.feed-tags.icon-tag #{post.category}
+							h5.feed-tags(data-icon="T") #{post.category}
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
@@ -49,11 +49,12 @@ div.main
 						a(href="#{post.url}")
 							h1.feed-title #{post.title}
 						if post.category != null
-							h5.feed-tags.icon-tag #{post.category}
+							h5.feed-tags(data-icon="T") #{post.category}
 						p #{post.excerpt}
 							span.feed-date Posted: #{post.date}
 						a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
-footer.top-radial
-	nav#nav.flex
-		h1.flex-center Argyle Ink
+footer#nav
+	nav.flex
+		h3.flex-center Argyle Ink
+		i.icon-menu
