@@ -35,7 +35,7 @@ argyleink.Snap = function(el, options) {
 
                 //if (Math.abs(newY) < Math.abs(settings.max) + 50) {
                     element.css(
-                        argyleink.prefix.css + 'transform', 
+                        'transform', 
                         'translate3d(0,' + newY + 'px,0)'
                     );
                 //}
@@ -72,19 +72,23 @@ argyleink.Snap = function(el, options) {
     function show() {
         debug && console.log('show');
 
-        element.animate({
-            translate3d: '0,0,0'
-        }, 100, 'ease-out');
         position.currentY = 0;
+        element.translate3d({
+              x: 0
+            , y: 0
+            , z: 0
+        }, 100, 'ease-out');
     }
 
     function hide() {
         debug && console.log('hide');
 
-        element.animate({
-            translate3d: '0,'+position.startY+'px,0'
-        }, 100, 'ease-out');
         position.currentY = position.startY;
+        element.translate3d({
+              x: 0
+            , y: position.currentY
+            , z: 0
+        });
     }
 
     init();

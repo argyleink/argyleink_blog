@@ -1,11 +1,11 @@
 argyleink.Carousel = function (element,callback) {
     var self = this;
-    element = Zepto(element);
+    element = $(element);
 
     var cb = callback;
 
-    var container = Zepto(element).find('ol'); 
-    var panes = Zepto(element).find('li');
+    var container = $(element).find('ol'); 
+    var panes = $(element).find('li');
 
     var pane_width = 0;
     var pane_count = panes.length;
@@ -79,7 +79,7 @@ argyleink.Carousel = function (element,callback) {
 
         if(supportsTransitions) {
             container.css(
-                argyleink.prefix.css + "transform", 
+                "transform", 
                 "translate3d("+ percent +"%,0,0) scale3d(1,1,1)"
             );
         }

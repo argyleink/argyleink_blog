@@ -3,7 +3,7 @@ argyleink.menu = (function(){
 
 	var me 		= this
 	  , snap
-	  , element = Zepto('#nav');
+	  , element = $('#nav');
 
 	function init() {
 		snap = new argyleink.Snap(element, {

@@ -3,21 +3,20 @@ var argyleink 	= {}
   , appScripts;
 
 baseScripts = [
-	  "js/zepto.min.js"
+	  "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"
 	, "js/hammer.min.js"
-	, "prefix"
-	//, "js/requestAnimationFrame.js"
 ];
 
 appScripts = [
-	  "carousel"
+	  "js/jquery.animate3d.js"
+	, "carousel"
 	, "snap"
 	, "menu" 
 ];
 
 argyleink.baseScriptsLoaded = function() {
 	require(appScripts, argyleink.scriptsLoaded);
-	Zepto('.main').css({'height': window.innerHeight - 40 + 'px'});
+	$('.main').css({'height': window.innerHeight - 40 + 'px'});
 }
 
 argyleink.scriptsLoaded = function() {
