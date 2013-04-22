@@ -1,1 +1,16 @@
-footer{padding:.7rem 1rem;position:fixed;z-index:1;bottom:0;width:100%;-webkit-transform:translate3d(0,360px,0);-moz-transform:translate3d(0,360px,0);-o-transform:translate3d(0,360px,0);-ms-transform:translate3d(0,360px,0);transform:translate3d(0,360px,0);height:400px}nav{padding-top:20px}
+footer {
+  padding: 0.7rem 1rem;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  -webkit-transform: translate3d(0, 360px, 0);
+  -moz-transform: translate3d(0, 360px, 0);
+  -o-transform: translate3d(0, 360px, 0);
+  -ms-transform: translate3d(0, 360px, 0);
+  transform: translate3d(0, 360px, 0);
+  height: 400px;
+}
+nav {
+  padding-top: 20px;
+}
