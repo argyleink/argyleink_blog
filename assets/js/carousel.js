@@ -1,5 +1,4 @@
-function Carousel(element,callback)
-{
+argyleink.Carousel = function (element,callback) {
     var self = this;
     element = $(element);
 
@@ -90,7 +89,6 @@ function Carousel(element,callback)
 
 
     function handleHammer(ev) {
-        console.log(ev);
         // disable browser scrolling
         ev.gesture.preventDefault();
 

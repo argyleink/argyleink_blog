@@ -5,12 +5,13 @@ var argyleink 	= {}
 baseScripts = [
 	  "js/zepto.min.js"
 	, "js/hammer.min.js"
-	, "js/prefix.js"
+	, "prefix"
 	//, "js/requestAnimationFrame.js"
 ];
 
 appScripts = [
-	  "js/carousel.js"
+	  "carousel"
+	, "snap"
 	, "menu" 
 ];
 
@@ -19,10 +20,10 @@ argyleink.baseScriptsLoaded = function() {
 }
 
 argyleink.scriptsLoaded = function() {
-	argyleink.socialCarousel = new Carousel("#social", carouselReady).init();
-	argyleink.postsCarousel = new Carousel("#posts", carouselReady).init();
-	argyleink.workCarousel = new Carousel("#work", carouselReady).init();
-	argyleink.labsCarousel = new Carousel("#labs", carouselReady).init();
+	argyleink.socialCarousel = new argyleink.Carousel("#social", carouselReady).init();
+	argyleink.postsCarousel = new argyleink.Carousel("#posts", carouselReady).init();
+	argyleink.workCarousel = new argyleink.Carousel("#work", carouselReady).init();
+	argyleink.labsCarousel = new argyleink.Carousel("#labs", carouselReady).init();
 
 	function carouselReady(el) {
 		$(el).removeClass('out');

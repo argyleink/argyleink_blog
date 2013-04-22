@@ -1,22 +1,23 @@
 argyleink.menu = (function(){
+	'use strict';
+
+	var me 		= this
+	  , snap
+	  , element = Zepto('#nav');
 
 	function init() {
-		Hammer($('#nav')).on("dragup", hammerDrag);
-	}
-
-	function hammerDrag(e) {
-		e.gesture.preventDefault();
-		var newY = $(this).css(argyleink.prefix.css + 'transform');
-
-		$(this).css(
-			argyleink.prefix.css + 'transform', 
-			'translateY(' + e.gesture.deltaY + 'px)'
-		);
+		snap = new argyleink.Snap(element, {
+			  min: 0
+			, max: 360
+			, start: 360
+			, dragThreshold: 200
+			, debug: true
+		});
 	}
 
 	// return {
 	// 	init: init
-	// }
+	// };
 
 	init();
 
