@@ -1,18 +1,1 @@
-argyleink.prefix = (function () {
-    
-    var styles  = window.getComputedStyle(document.documentElement, '')
-      , pre     = (Array.prototype.slice
-            .call(styles)
-            .join('') 
-            .match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
-        )[1]
-      , dom     = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
-
-    return {
-        dom:        dom,
-        lowercase:  pre,
-        css:        '-' + pre + '-',
-        js:         pre[0].toUpperCase() + pre.substr(1)
-    };
-
-})();
+argyleink.prefix=function(){var e=window.getComputedStyle(document.documentElement,""),t=(Array.prototype.slice.call(e).join("").match(/-(moz|webkit|ms)-/)||""===e.OLink&&["","o"])[1],n="WebKit|Moz|MS|O".match(RegExp("("+t+")","i"))[1];return{dom:n,lowercase:t,css:"-"+t+"-",js:t[0].toUpperCase()+t.substr(1)}}();

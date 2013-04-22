@@ -17,6 +17,7 @@ appScripts = [
 
 argyleink.baseScriptsLoaded = function() {
 	require(appScripts, argyleink.scriptsLoaded);
+	Zepto('.main').css({'height': window.innerHeight - 40 + 'px'});
 }
 
 argyleink.scriptsLoaded = function() {

@@ -1,11 +1,11 @@
 argyleink.Carousel = function (element,callback) {
     var self = this;
-    element = $(element);
+    element = Zepto(element);
 
     var cb = callback;
 
-    var container = $(">ol", element);
-    var panes = $(">ol>li", element);
+    var container = Zepto(element).find('ol'); 
+    var panes = Zepto(element).find('li');
 
     var pane_width = 0;
     var pane_count = panes.length;
@@ -75,7 +75,10 @@ argyleink.Carousel = function (element,callback) {
         }
 
         if(supportsTransitions) {
-            container.css("transform", "translate3d("+ percent +"%,0,0) scale3d(1,1,1)");
+            container.css(
+                argyleink.prefix.css + "transform", 
+                "translate3d("+ percent +"%,0,0) scale3d(1,1,1)"
+            );
         }
         else {
             var px = ((pane_width*pane_count) / 100) * percent;
@@ -83,8 +86,12 @@ argyleink.Carousel = function (element,callback) {
         }
     }
 
-    this.next = function() { return this.showPane(current_pane+1, true); };
-    this.prev = function() { return this.showPane(current_pane-1, true); };
+    this.next = function() { 
+        return this.showPane(current_pane+1, true); 
+    };
+    this.prev = function() { 
+        return this.showPane(current_pane-1, true); 
+    };
 
 
 
@@ -98,12 +105,6 @@ argyleink.Carousel = function (element,callback) {
                 // stick to the finger
                 var pane_offset = -(100/pane_count)*current_pane;
                 var drag_offset = ((100/pane_width)*ev.gesture.deltaX) / pane_count;
-
-                // slow down at the first and last pane
-                if((current_pane == 0 && ev.gesture.direction == Hammer.DIRECTION_RIGHT) ||
-                    (current_pane == pane_count-1 && ev.gesture.direction == Hammer.DIRECTION_LEFT)) {
-                    drag_offset *= .4;
-                }
 
                 setContainerOffset(drag_offset + pane_offset);
                 break;
@@ -120,7 +121,7 @@ argyleink.Carousel = function (element,callback) {
 
             case 'release':
                 // more then 50% moved, navigate
-                if(Math.abs(ev.gesture.deltaX) > pane_width/2) {
+                if(Math.abs(ev.gesture.deltaX) > pane_width/3) {
                     if(ev.gesture.direction == 'right') {
                         self.prev();
                     } else {

@@ -8,11 +8,20 @@ argyleink.menu = (function(){
 	function init() {
 		snap = new argyleink.Snap(element, {
 			  min: 0
-			, max: 360
-			, start: 360
-			, dragThreshold: 200
+			, max: 30
+			, start: 365
+			, dragThreshold: 100
 			, debug: true
 		});
+		listen();
+	}
+
+	function listen() {
+		element.on('click', navClicked);
+	}
+
+	function navClicked(e) {
+		console.log(e.target);
 	}
 
 	// return {

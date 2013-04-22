@@ -33,12 +33,12 @@ argyleink.Snap = function(el, options) {
                 var diff = e.gesture.deltaY
                   , newY = position.currentY + diff;
 
-                if (Math.abs(newY) < Math.abs(settings.max) + 50) {
+                //if (Math.abs(newY) < Math.abs(settings.max) + 50) {
                     element.css(
                         argyleink.prefix.css + 'transform', 
                         'translate3d(0,' + newY + 'px,0)'
                     );
-                }
+                //}
 
                 break;
 
@@ -55,8 +55,16 @@ argyleink.Snap = function(el, options) {
                 break;
 
             case 'release':
-                position.currentY += e.gesture.deltaY;
-                (Math.abs(position.currentY) > settings.dragThreshold) ? show() : hide();
+                
+                switch(e.gesture.direction) {
+                    case "up":
+                        (Math.abs(e.gesture.deltaY) > settings.dragThreshold) ? show() : hide();
+                        break;
+                    case "down":
+                        (Math.abs(e.gesture.deltaY) < settings.dragThreshold) ? show() : hide();
+                        break;
+                }
+
                 break;
         }
     }
@@ -65,18 +73,18 @@ argyleink.Snap = function(el, options) {
         debug && console.log('show');
 
         element.animate({
-            translate3d: '0,'+settings.max+'px,0'
+            translate3d: '0,0,0'
         }, 100, 'ease-out');
-        position.currentY = settings.max;
+        position.currentY = 0;
     }
 
     function hide() {
         debug && console.log('hide');
 
         element.animate({
-            translate3d: '0,0,0'
+            translate3d: '0,'+position.startY+'px,0'
         }, 100, 'ease-out');
-        position.currentY = settings.min;
+        position.currentY = position.startY;
     }
 
     init();
