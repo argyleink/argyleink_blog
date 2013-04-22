@@ -10,6 +10,7 @@ argyleink.Snap = function(el, options) {
             min: options.min || 0
           , max: options.max || 200
           , dragThreshold: options.dragThreshold || 100
+          , menuBtn: options.button || null
       }
       , debug     = options.debug || false
     ;
@@ -21,6 +22,8 @@ argyleink.Snap = function(el, options) {
             "release dragup dragdown swipeup swipedown", 
             $.proxy(watch, this)
         );
+        if (settings.menuBtn)
+            Hammer(element.find(settings.menuBtn)).on('tap', $.proxy(toggle, this))
 	}
 
 	function watch(e) {
@@ -33,13 +36,11 @@ argyleink.Snap = function(el, options) {
                 var diff = e.gesture.deltaY
                   , newY = position.currentY + diff;
 
-                //if (Math.abs(newY) < Math.abs(settings.max) + 50) {
-                    element.css(
-                        'transform', 
-                        'translate3d(0,' + newY + 'px,0)'
-                    );
-                //}
-
+                element.css(
+                    'transform', 
+                    'translate3d(0,' + newY + 'px,0)'
+                );
+                
                 break;
 
             case 'swipeup':
@@ -73,22 +74,30 @@ argyleink.Snap = function(el, options) {
         debug && console.log('show');
 
         position.currentY = 0;
-        element.translate3d({
-              x: 0
-            , y: 0
-            , z: 0
-        }, 100, 'ease-out');
+        animate(position.currentY);
     }
 
     function hide() {
         debug && console.log('hide');
 
         position.currentY = position.startY;
+        animate(position.currentY);
+    }
+
+    function toggle() {
+        debug && console.log('toggle');
+
+        position.currentY = (position.currentY === position.startY) ? position.max : position.startY;
+
+        animate(position.currentY);
+    }
+
+    function animate(val) {
         element.translate3d({
               x: 0
-            , y: position.currentY
+            , y: val
             , z: 0
-        });
+        }, 100);
     }
 
     init();
@@ -96,6 +105,7 @@ argyleink.Snap = function(el, options) {
 	return {
 		  show: show
         , hide: hide
+        , toggle: toggle
 	};
 
 }

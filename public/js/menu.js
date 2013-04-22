@@ -1,1 +1,1 @@
-argyleink.menu=function(){"use strict";function e(){i=new argyleink.Snap(r,{min:0,max:30,start:365,dragThreshold:100,debug:!0}),t()}function t(){r.on("click",n)}function n(e){console.log(e.target)}var i,r=$("#nav");e()}();
+argyleink.menu=function(){"use strict";function e(){i=new argyleink.Snap(r,{min:0,max:30,start:200,dragThreshold:75,debug:!0,button:"#open-footer"}),t()}function t(){r.on("click",n)}function n(e){console.log(e.target)}var i,r=$("#nav");e()}();

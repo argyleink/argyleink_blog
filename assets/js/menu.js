@@ -9,9 +9,10 @@ argyleink.menu = (function(){
 		snap = new argyleink.Snap(element, {
 			  min: 0
 			, max: 30
-			, start: 365
-			, dragThreshold: 100
+			, start: 200
+			, dragThreshold: 75
 			, debug: true
+			, button: '#open-footer'
 		});
 		listen();
 	}
