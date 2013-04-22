@@ -15,6 +15,11 @@ html
 
 	//- add other scripts through require.js, not here
 	script(data-main="js/main", src="js/require.js")
+	<script>
+	document.write('<script src=' +
+	('__proto__' in {} ? 'zepto' : 'jquery') +
+	'.js><\/script>')
+	</script>
 
 	//- this must be included for live reload to work in developement
 	//- it will be automatically ignored when deployed
