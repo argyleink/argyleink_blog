@@ -9,6 +9,14 @@
     transform: translate3d(0,0,0) scale3d(1,1,1)
     transform-style: preserve-3d
 
+.carousel > h1
+    position:absolute
+    top:-0.5rem
+    left:-0.3rem
+    margin:0
+    font-size:2rem
+    color: hsla(0, 0%, 0%, 0.10)
+
 .carousel ol.animate 
     transition: all .3s
 
@@ -22,6 +30,27 @@
 
 .carousel.out ol
     transform: translateX(100%)
+
+.carousel .btn-nav
+    position:absolute
+    top:50%;
+    color: hsla(0, 0%, 0%, 0.15)
+    margin-top:-2rem
+    z-index:1
+    font-family: 'icomoon'
+    font-size: 4rem
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+
+.carousel > .next
+    right: -0.7rem
+
+.carousel > .prev
+    left: -0.7rem
 
 .carousel li 
     height: 100%

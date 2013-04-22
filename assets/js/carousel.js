@@ -33,7 +33,10 @@ argyleink.Carousel = function (element,callback) {
         $(window).on("load resize orientationchange", function() {
             setPaneDimensions();
             //updateOffset();
-        })
+        });
+
+        Hammer(element.find('.next')).on('tap', this.next);
+        Hammer(element.find('.prev')).on('tap', this.prev);
 
         Hammer(element, { drag_lock_to_axis: true })
             .on("release dragleft dragright swipeleft swiperight", handleHammer);
@@ -87,10 +90,10 @@ argyleink.Carousel = function (element,callback) {
     }
 
     this.next = function() { 
-        return this.showPane(current_pane+1, true); 
+        return self.showPane(current_pane+1, true); 
     };
     this.prev = function() { 
-        return this.showPane(current_pane-1, true); 
+        return self.showPane(current_pane-1, true); 
     };
 
 

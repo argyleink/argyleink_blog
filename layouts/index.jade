@@ -1,6 +1,11 @@
 div.main.scroll-y
 	
 	section#social.carousel.out.popped-in.top-radial.no-select
+		h1 Social
+		span.next.btn-nav
+			i.icon-arrow-right
+		span.prev.btn-nav
+			i.icon-arrow-left
 		ol.animate.flex
 			for post in site.social
 				li
@@ -12,6 +17,11 @@ div.main.scroll-y
 						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
 
 	section#work.carousel.out.popped-in
+		h1 Work
+		span.next.btn-nav
+			i.icon-arrow-right
+		span.prev.btn-nav
+			i.icon-arrow-left
 		ol.animate.flex
 			for post in site.work
 				li.no-select
@@ -26,6 +36,11 @@ div.main.scroll-y
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
 	section#labs.carousel.out.popped-in
+		h1 Labs
+		span.next.btn-nav
+			i.icon-arrow-right
+		span.prev.btn-nav
+			i.icon-arrow-left
 		ol.animate.flex
 			for post in site.labs
 				li.no-select
@@ -40,6 +55,11 @@ div.main.scroll-y
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
 	section#posts.carousel.out.popped-in.bottom-radial
+		h1 Blog
+		span.next.btn-nav
+			i.icon-arrow-right
+		span.prev.btn-nav
+			i.icon-arrow-left
 		ol.animate.flex
 			for post in site.posts
 				li.no-select
