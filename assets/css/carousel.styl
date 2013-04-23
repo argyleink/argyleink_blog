@@ -11,11 +11,13 @@
 
 .carousel > h1
     position:absolute
-    top:-0.5rem
-    left:-0.3rem
+    top:1rem
     margin:0
     font-size:2rem
-    color: hsla(0, 0%, 0%, 0.10)
+    color:hsl(0,0%,14%)
+    text-shadow:1px 1px 1px hsla(0,0%,0%,0.2)
+    background-color:hsla(0,0%,10%, 0.8)
+    padding:0.2rem 0.5rem 0.2rem 0
 
 .carousel ol.animate 
     transition: all .3s
@@ -29,12 +31,13 @@
     transform-style: preserve-3d
 
 .carousel.out ol
-    transform: translateX(100%)
+    transform: translateX(20px)
+    opacity: 0
 
 .carousel .btn-nav
     position:absolute
     top:50%;
-    color: hsla(0, 0%, 0%, 0.15)
+    color:hsla(0,0%,10%, 0.5)
     margin-top:-2rem
     z-index:1
     font-family: 'icomoon'
@@ -45,12 +48,21 @@
     text-transform: none
     line-height: 1
     -webkit-font-smoothing: antialiased
+    transition:all 1s ease-out
 
 .carousel > .next
     right: -0.7rem
 
 .carousel > .prev
     left: -0.7rem
+
+.carousel > .prev.out, 
+.carousel > .next.out
+    opacity:0.1
+
+.carousel > .prev:active,
+.carousel > .next:active
+    transform:scale3d(0.97,0.97,1)
 
 .carousel li 
     height: 100%

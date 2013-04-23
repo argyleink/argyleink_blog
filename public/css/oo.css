@@ -12,6 +12,33 @@
 .blue-border {
   border: 1px solid #00a6fc;
 }
+.tr {
+  text-align: right;
+}
+.tl {
+  text-align: left;
+}
+.animate-fast {
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.animate-normal {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.animate-slow {
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  -ms-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
 .flex {
   display: -webkit-box;
 /* OLD - iOS 6-, Safari 3.1-6 */
@@ -92,8 +119,20 @@
   box-shadow: 0 0 3px rgba(0,0,0,0.4) inset;
 }
 .top-radial {
+  background: url("../img/radial.png") top center no-repeat;
+  -webkit-background-size: 85% auto;
+  -moz-background-size: 85% auto;
+  -o-background-size: 85% auto;
+  -ms-background-size: 85% auto;
+  background-size: 85% auto;
   background-image: radial-gradient(farthest-side at 50% 0, rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 .bottom-radial {
   background-image: radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background: url("../img/radialb.png") bottom center no-repeat;
+  -webkit-background-size: 85% auto;
+  -moz-background-size: 85% auto;
+  -o-background-size: 85% auto;
+  -ms-background-size: 85% auto;
+  background-size: 85% auto;
 }

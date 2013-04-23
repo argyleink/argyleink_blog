@@ -6,6 +6,8 @@ argyleink.Carousel = function (element,callback) {
 
     var container = $(element).find('ol'); 
     var panes = $(element).find('li');
+    var arrows = $(element).find('.btn-nav');
+    var swiped = false;
 
     var pane_width = 0;
     var pane_count = panes.length;
@@ -32,7 +34,6 @@ argyleink.Carousel = function (element,callback) {
 
         $(window).on("load resize orientationchange", function() {
             setPaneDimensions();
-            //updateOffset();
         });
 
         Hammer(element.find('.next')).on('tap', this.next);
@@ -40,6 +41,8 @@ argyleink.Carousel = function (element,callback) {
 
         Hammer(element, { drag_lock_to_axis: true })
             .on("release dragleft dragright swipeleft swiperight", handleHammer);
+
+        cb(element);
     };
 
 
@@ -52,7 +55,6 @@ argyleink.Carousel = function (element,callback) {
             $(this).width(pane_width);
         });
         container.width(pane_width*pane_count);
-        cb(element);
     };
 
 
@@ -134,6 +136,7 @@ argyleink.Carousel = function (element,callback) {
                 else {
                     self.showPane(current_pane, true);
                 }
+                if (!swiped) arrows.addClass('out');
                 break;
         }
     }
