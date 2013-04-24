@@ -1,18 +1,16 @@
-argyleink.Carousel = function (element,callback) {
-    var self = this;
+argyleink.Carousel = function (element) {
+    'use strict';
+
+    var self            = this
+      , container       = $(element).find('ol')
+      , panes           = $(element).find('li')
+      , arrows          = $(element).find('.btn-nav')
+      , swiped          = false
+      , pane_width      = 0
+      , pane_count      = panes.length
+      , current_pane    = 0;
+    
     element = $(element);
-
-    var cb = callback;
-
-    var container = $(element).find('ol'); 
-    var panes = $(element).find('li');
-    var arrows = $(element).find('.btn-nav');
-    var swiped = false;
-
-    var pane_width = 0;
-    var pane_count = panes.length;
-
-    var current_pane = 0;
 
     var supportsTransitions  = (function() {
         var s = document.createElement('p').style, // 's' for style. better to create an element if body yet to exist
@@ -30,6 +28,13 @@ argyleink.Carousel = function (element,callback) {
      * initial
      */
     this.init = function() {
+        var deferred = $.Deferred();
+
+        container.css(
+            "transform", 
+            "translate3d(50px,0,0) scale3d(1,1,1)"
+        );
+
         setPaneDimensions();
 
         $(window).on("load resize orientationchange", function() {
@@ -42,9 +47,17 @@ argyleink.Carousel = function (element,callback) {
         Hammer(element, { drag_lock_to_axis: true })
             .on("release dragleft dragright swipeleft swiperight", handleHammer);
 
-        this.showPane(2, function(){
-            cb(element);
+        self.showPane(0, function(){
+            container.translate3d({
+                  x: 0
+                , y: 0
+                , z: 0
+            }, 150, 'ease-out', function(){
+                deferred.resolve(element);
+            }).css('opacity', 1);
         });
+
+        return deferred.promise();
     };
 
 
@@ -79,7 +92,7 @@ argyleink.Carousel = function (element,callback) {
     };
 
     this.showPaneComplete = function() {
-        cb(element);
+        // cb(element);
     }
 
 
@@ -102,8 +115,6 @@ argyleink.Carousel = function (element,callback) {
     this.prev = function() { 
         return self.showPane(current_pane-1, true); 
     };
-
-
 
     function handleHammer(ev) {
         // disable browser scrolling

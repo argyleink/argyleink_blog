@@ -20,14 +20,14 @@ argyleink.baseScriptsLoaded = function() {
 }
 
 argyleink.scriptsLoaded = function() {
-	argyleink.socialCarousel = new argyleink.Carousel("#social", carouselReady).init();
-	argyleink.postsCarousel = new argyleink.Carousel("#posts", carouselReady).init();
-	argyleink.workCarousel = new argyleink.Carousel("#work", carouselReady).init();
-	argyleink.labsCarousel = new argyleink.Carousel("#labs", carouselReady).init();
-
-	function carouselReady(el) {
-		$(el).removeClass('out');
-	}
+	var social 	= new argyleink.Carousel("#social")
+	  , posts 	= new argyleink.Carousel("#posts")
+	  , work 	= new argyleink.Carousel("#work")
+	  , labs 	= new argyleink.Carousel("#labs");
+	
+	work.init().then(labs.init).then(posts.init).then(social.init).done(function(){
+		console.log('carousels done');
+	});
 
 	argyleink.init();
 }

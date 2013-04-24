@@ -1,28 +1,12 @@
 div.main.scroll-y
 	
-	section#social.carousel.out.popped-in.top-radial.no-select
-		h1 Social
-		span.next.btn-nav
-			i.icon-arrow-right
-		span.prev.btn-nav
-			i.icon-arrow-left
-		ol.animate.flex
-			for post in site.social
-				li
-					figure
-						img.feed-image.circle.light-blue-border(src="#{post.picture}")
-					div.feed-meta
-						h1.feed-title #{post.title}
-						h5.feed-tags #{post.tagline}
-						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
-
-	section#work.carousel.out.popped-in
+	section#work.carousel.out.popped-in.top-radial
 		h1 Work
 		span.next.btn-nav
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex
+		ol.animate.flex(style="opacity:0")
 			for post in site.work
 				li.no-select
 					figure
@@ -35,13 +19,13 @@ div.main.scroll-y
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
-	section#labs.carousel.out.popped-in
+	section#labs.carousel.popped-in
 		h1 Labs
 		span.next.btn-nav
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex
+		ol.animate.flex(style="opacity:0")
 			for post in site.labs
 				li.no-select
 					figure
@@ -54,13 +38,13 @@ div.main.scroll-y
 							span.feed-date #{post.date}
 					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
-	section#posts.carousel.out.popped-in.bottom-radial
+	section#posts.carousel.popped-in
 		h1 Blog
 		span.next.btn-nav
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex
+		ol.animate.flex(style="opacity:0")
 			for post in site.posts
 				li.no-select
 					figure
@@ -73,5 +57,21 @@ div.main.scroll-y
 						p #{post.excerpt}
 							span.feed-date Posted: #{post.date}
 						a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
+
+	section#social.carousel.popped-in.bottom-radial.no-select
+		h1 Social
+		span.next.btn-nav
+			i.icon-arrow-right
+		span.prev.btn-nav
+			i.icon-arrow-left
+		ol.animate.flex(style="opacity:0")
+			for post in site.social
+				li
+					figure
+						img.feed-image.circle.light-blue-border(src="#{post.picture}")
+					div.feed-meta
+						h1.feed-title #{post.title}
+						h5.feed-tags #{post.tagline}
+						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
 
 include footer
