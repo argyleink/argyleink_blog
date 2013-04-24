@@ -42,7 +42,9 @@ argyleink.Carousel = function (element,callback) {
         Hammer(element, { drag_lock_to_axis: true })
             .on("release dragleft dragright swipeleft swiperight", handleHammer);
 
-        cb(element);
+        this.showPane(2, function(){
+            cb(element);
+        });
     };
 
 
@@ -62,23 +64,26 @@ argyleink.Carousel = function (element,callback) {
      * show pane by index
      * @param   {Number}    index
      */
-    this.showPane = function( index ) {
+    this.showPane = function( index, callback ) {
         // between the bounds
         index = Math.max(0, Math.min(index, pane_count-1));
         current_pane = index;
 
         var offset = -((100/pane_count)*current_pane);
-        setContainerOffset(offset, true);
+
+        container.translate3d({
+              x: offset + '%'
+            , y: 0
+            , z: 0
+        }, 200, 'ease-out', $.proxy(callback, self));
     };
+
+    this.showPaneComplete = function() {
+        cb(element);
+    }
 
 
     function setContainerOffset(percent, animate) {
-        container.removeClass("animate");
-
-        if(animate) {
-            container.addClass("animate");
-        }
-
         if(supportsTransitions) {
             container.css(
                 "transform", 
