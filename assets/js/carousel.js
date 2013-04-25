@@ -41,8 +41,8 @@ argyleink.Carousel = function (element) {
             setPaneDimensions();
         });
 
-        Hammer(element.find('.next')).on('tap', this.next);
-        Hammer(element.find('.prev')).on('tap', this.prev);
+        Hammer(element.find('.next')).on('tap', self.next);
+        Hammer(element.find('.prev')).on('tap', self.prev);
 
         Hammer(element, { drag_lock_to_axis: true })
             .on("release dragleft dragright swipeleft swiperight", handleHammer);

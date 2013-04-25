@@ -22,7 +22,7 @@ argyleink.menu = (function(){
 	}
 
 	function navClicked(e) {
-		console.log(e.target);
+		console.log(e.target + ": " + me);
 	}
 
 	// return {
