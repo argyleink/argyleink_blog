@@ -1,1 +1,34 @@
-argyleink.menu=function(){"use strict";function e(){i=new argyleink.Snap(r,{min:0,max:30,start:200,dragThreshold:75,debug:!0,button:"#open-footer"}),t()}function t(){r.on("click",n)}function n(e){console.log(e.target)}var i,r=$("#nav");e()}();
+argyleink.menu = (function(){
+	'use strict';
+
+	var me 		= this
+	  , snap
+	  , element = $('#nav');
+
+	function init() {
+		snap = new argyleink.Snap(element, {
+			  min: 0
+			, max: 30
+			, start: 200
+			, dragThreshold: 75
+			, debug: true
+			, button: '#open-footer'
+		});
+		listen();
+	}
+
+	function listen() {
+		element.on('click', navClicked);
+	}
+
+	function navClicked(e) {
+		console.log(e.target + ": " + me);
+	}
+
+	// return {
+	// 	init: init
+	// };
+
+	init();
+
+})();

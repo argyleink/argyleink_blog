@@ -1,1 +1,34 @@
-(function(t){var e=0;t.fn.translate3d=function(n,r,i,o){var a,s=t.speed(r,i,o);s.easing=s.easing||"ease",n=t.extend({x:0,y:0,z:0},n);for(var c in n)a=n[c],a.indexOf&&(a=a.indexOf("%")>0?a:a+"px");return this.each(function(){var r=t(this);r.css({transitionDuration:s.duration+"ms",transitionTimingFunction:s.easing,transform:"translate3d("+n.x+", "+n.y+"px, "+n.z+"px)"}),setTimeout(function(){r.css({transitionDuration:"0s",transitionTimingFunction:"ease"}),s.complete()},s.duration+(e||0))})}})(jQuery);
+;(function($) {
+    var delay = 0;
+    $.fn.translate3d = function(translations, speed, easing, complete) {
+        var opt = $.speed(speed, easing, complete)
+          , tl;
+        opt.easing = opt.easing || 'ease';
+        translations = $.extend({x: 0, y: 0, z: 0}, translations);
+
+        for (var prop in translations) {
+            tl = translations[prop];
+            if (tl.indexOf) 
+                tl = tl.indexOf('%') > 0 ? tl : tl + 'px';
+        }
+
+        return this.each(function() {
+            var $this = $(this);
+
+            $this.css({ 
+                transitionDuration: opt.duration + 'ms',
+                transitionTimingFunction: opt.easing,
+                transform: 'translate3d(' + translations.x + ', ' + translations.y + 'px, ' + translations.z + 'px)'
+            });
+
+            setTimeout(function() { 
+                $this.css({ 
+                    transitionDuration: '0s', 
+                    transitionTimingFunction: 'ease'
+                });
+
+                opt.complete();
+            }, opt.duration + (delay || 0));
+        });
+    };
+})(jQuery);
