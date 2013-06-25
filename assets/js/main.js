@@ -33,6 +33,7 @@ argyleink.scriptsLoaded = function() {
 }
 
 argyleink.init = function() {
+	argyleink.menu.init();
 	argyleink.initListeners();
 }
 

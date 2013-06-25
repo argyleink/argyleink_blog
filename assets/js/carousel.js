@@ -30,10 +30,10 @@ argyleink.Carousel = function (element) {
     this.init = function() {
         var deferred = $.Deferred();
 
-        container.css(
-            "transform", 
-            "translate3d(50px,0,0) scale3d(1,1,1)"
-        );
+        // container.css(
+        //     "transform", 
+        //     "translate3d(0,10px,0) scale3d(1,1,1)"
+        // );
 
         setPaneDimensions();
 
@@ -52,9 +52,13 @@ argyleink.Carousel = function (element) {
                   x: 0
                 , y: 0
                 , z: 0
-            }, 150, 'ease-out', function(){
+            }, 1550, 'ease-out', function(){
                 deferred.resolve(element);
-            }).css('opacity', 1);
+            });
+            container.css(
+                "opacity", 
+                1
+            );
         });
 
         return deferred.promise();

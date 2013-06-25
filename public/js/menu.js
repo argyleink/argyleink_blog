@@ -25,10 +25,8 @@ argyleink.menu = (function(){
 		console.log(e.target + ": " + me);
 	}
 
-	// return {
-	// 	init: init
-	// };
-
-	init();
+	return {
+		init: init
+	};
 
 })();
