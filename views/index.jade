@@ -7,7 +7,7 @@ div.main.scroll-y
 		span.prev.btn-nav
 			i.icon-arrow-left
 		ol.animate.flex(style="opacity:0")
-			for post in site.labs
+			for post in sort(site.work, { by: 'date' })
 				li.no-select
 					figure
 						img.feed-image.circle(src="#{post.heroimage}")
@@ -26,7 +26,7 @@ div.main.scroll-y
 		span.prev.btn-nav
 			i.icon-arrow-left
 		ol.animate.flex(style="opacity:0")
-			for post in site.labs
+			for post in sort(site.labs, { by: 'date' })
 				li.no-select
 					figure
 						img.feed-image.circle(src="#{post.heroimage}")
@@ -45,7 +45,7 @@ div.main.scroll-y
 		span.prev.btn-nav
 			i.icon-arrow-left
 		ol.animate.flex(style="opacity:0")
-			for post in site.posts
+			for post in sort(site.posts, { by: 'date' })
 				li.no-select
 					figure
 						img.feed-image.circle(src="#{post.heroimage}")
@@ -65,7 +65,7 @@ div.main.scroll-y
 		span.prev.btn-nav
 			i.icon-arrow-left
 		ol.animate.flex(style="opacity:0")
-			for post in site.social
+			for post in sort(site.social, { by: 'date' })
 				li
 					figure
 						img.feed-image.circle.light-blue-border(src="#{post.picture}")
