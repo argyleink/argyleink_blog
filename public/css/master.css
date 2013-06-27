@@ -6511,6 +6511,7 @@ hr {
   max-width: 82px;
 }
 .feed-title {
+  display: inline-block;
   color: #b3dde6;
   margin-top: 10px;
   margin-bottom: 0;
