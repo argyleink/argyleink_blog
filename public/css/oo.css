@@ -93,6 +93,16 @@
   -ms-user-select: none;
   user-select: none;
 }
+.grab {
+  cursor: grab;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+.grab:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
 .circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

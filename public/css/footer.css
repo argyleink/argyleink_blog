@@ -10,6 +10,7 @@ footer {
   -ms-transform: translate3d(0, 200px, 0);
   transform: translate3d(0, 200px, 0);
   height: 240px;
+  cursor: pointer;
 }
 .btn-container {
   padding-top: 20px;

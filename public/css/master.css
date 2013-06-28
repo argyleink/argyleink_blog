@@ -6284,6 +6284,16 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.grab {
+  cursor: grab;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+.grab:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
 .circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -6311,7 +6321,7 @@ body {
   -moz-background-size: 85% auto;
   -ms-background-size: 85% auto;
   background-size: 85% auto;
-  background-image: radial-gradient(farthest-side at 50% 0, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background-image: radial-gradient(closest-side at 50% 0, rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 .bottom-radial {
   background-image: radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.3), rgba(0,0,0,0));
@@ -6458,6 +6468,7 @@ footer {
   -ms-transform: translate3d(0, 200px, 0);
   transform: translate3d(0, 200px, 0);
   height: 240px;
+  cursor: pointer;
 }
 .btn-container {
   padding-top: 20px;

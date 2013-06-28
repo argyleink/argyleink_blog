@@ -6,7 +6,7 @@ div.main.scroll-y
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex(style="opacity:0")
+		ol.grab.animate.flex(style="opacity:0")
 			for post in sort(site.work, { by: 'date' })
 				li.no-select
 					figure
@@ -25,7 +25,7 @@ div.main.scroll-y
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex(style="opacity:0")
+		ol.grab.animate.flex(style="opacity:0")
 			for post in sort(site.labs, { by: 'date' })
 				li.no-select
 					figure
@@ -44,7 +44,7 @@ div.main.scroll-y
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex(style="opacity:0")
+		ol.grab.animate.flex(style="opacity:0")
 			for post in sort(site.posts, { by: 'date' })
 				li.no-select
 					figure
@@ -64,7 +64,7 @@ div.main.scroll-y
 			i.icon-arrow-right
 		span.prev.btn-nav
 			i.icon-arrow-left
-		ol.animate.flex(style="opacity:0")
+		ol.grab.animate.flex(style="opacity:0")
 			for post in sort(site.social, { by: 'date' })
 				li
 					figure
