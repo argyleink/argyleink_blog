@@ -1,77 +1,85 @@
-div.main.scroll-y
+aside#default-popup.avgrund-popup
+	h2 That's all, folks
+	p You can hit ESC or click outside to close the modal. Give it a go to see the reverse transition.
+
+div.main
 	
-	section#work.carousel.popped-in.top-radial
-		h1 Work
-		span.next.btn-nav
-			i.icon-arrow-right
-		span.prev.btn-nav
-			i.icon-arrow-left
-		ol.grab.animate.flex(style="opacity:0")
-			for post in sort(site.work, { by: 'date' })
-				li.no-select
-					figure
-						img.feed-image.circle(src="#{post.heroimage}")
-					div.feed-meta
-						a(href="#{post.url}")
-							h1.feed-title #{post.title}
-						if post.category != null
-							h5.feed-tags(data-icon="T") #{post.category}
-							span.feed-date #{post.date}
-					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
-
-	section#labs.carousel.popped-in
-		h1 Labs
-		span.next.btn-nav
-			i.icon-arrow-right
-		span.prev.btn-nav
-			i.icon-arrow-left
-		ol.grab.animate.flex(style="opacity:0")
-			for post in sort(site.labs, { by: 'date' })
-				li.no-select
-					figure
-						img.feed-image.circle(src="#{post.heroimage}")
-					div.feed-meta
-						a(href="#{post.url}")
-							h1.feed-title #{post.title}
-						if post.category != null
-							h5.feed-tags(data-icon="T") #{post.category}
-							span.feed-date #{post.date}
-					a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
-
-	section#posts.carousel.popped-in
-		h1 Blog
-		span.next.btn-nav
-			i.icon-arrow-right
-		span.prev.btn-nav
-			i.icon-arrow-left
-		ol.grab.animate.flex(style="opacity:0")
-			for post in sort(site.posts, { by: 'date' })
-				li.no-select
-					figure
-						img.feed-image.circle(src="#{post.heroimage}")
-					div.feed-meta
-						a(href="#{post.url}")
-							h1.feed-title #{post.title}
-						if post.category != null
-							h5.feed-tags(data-icon="T") #{post.category}
-						p #{post.excerpt}
-							span.feed-date Posted: #{post.date}
+	article.scroll-y.avgrund-contents
+		
+		section#work.carousel.popped-in.top-radial
+			h1 Work
+			span.next.btn-nav
+				i.icon-arrow-right
+			span.prev.btn-nav
+				i.icon-arrow-left
+			ol.grab.animate.flex(style="opacity:0")
+				for post in sort(site.work, { by: 'date' })
+					li.no-select
+						figure
+							img.feed-image.circle(src="#{post.heroimage}")
+						div.feed-meta
+							a(href="#{post.url}")
+								h1.feed-title #{post.title}
+							if post.category != null
+								h5.feed-tags(data-icon="T") #{post.category}
+								span.feed-date #{post.date}
 						a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
 
-	section#social.carousel.popped-in.bottom-radial
-		h1 Social
-		span.next.btn-nav
-			i.icon-arrow-right
-		span.prev.btn-nav
-			i.icon-arrow-left
-		ol.grab.animate.flex(style="opacity:0")
-			for post in sort(site.social, { by: 'date' })
-				li
-					figure
-						img.feed-image.circle.light-blue-border(src="#{post.picture}")
-					div.feed-meta
-						h1.feed-title #{post.title}
-						h5.feed-tags #{post.tagline}
-						a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
+		section#labs.carousel.popped-in
+			h1 Labs
+			span.next.btn-nav
+				i.icon-arrow-right
+			span.prev.btn-nav
+				i.icon-arrow-left
+			ol.grab.animate.flex(style="opacity:0")
+				for post in sort(site.labs, { by: 'date' })
+					li.no-select
+						figure
+							img.feed-image.circle(src="#{post.heroimage}")
+						div.feed-meta
+							a(href="#{post.url}")
+								h1.feed-title #{post.title}
+							if post.category != null
+								h5.feed-tags(data-icon="T") #{post.category}
+								span.feed-date #{post.date}
+						a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
+
+		section#posts.carousel.popped-in
+			h1 Blog
+			span.next.btn-nav
+				i.icon-arrow-right
+			span.prev.btn-nav
+				i.icon-arrow-left
+			ol.grab.animate.flex(style="opacity:0")
+				for post in sort(site.posts, { by: 'date' })
+					li.no-select
+						figure
+							img.feed-image.circle(src="#{post.heroimage}")
+						div.feed-meta
+							a(href="#{post.url}")
+								h1.feed-title #{post.title}
+							if post.category != null
+								h5.feed-tags(data-icon="T") #{post.category}
+							p #{post.excerpt}
+								span.feed-date Posted: #{post.date}
+							a.btn-simple.feed-launch(href="#{post.url}", target="_blank") Read
+
+		section#social.carousel.popped-in.bottom-radial
+			h1 Social
+			span.next.btn-nav
+				i.icon-arrow-right
+			span.prev.btn-nav
+				i.icon-arrow-left
+			ol.grab.animate.flex(style="opacity:0")
+				for post in sort(site.social, { by: 'date' })
+					li
+						figure
+							img.feed-image.circle.light-blue-border(src="#{post.picture}")
+						div.feed-meta
+							h1.feed-title #{post.title}
+							h5.feed-tags #{post.tagline}
+							a.btn-simple.feed-launch(href="#{post.profileUrl}", target="_blank") Launch
+
+div.avgrund-cover
 
 include footer

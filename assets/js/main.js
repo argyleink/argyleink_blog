@@ -5,6 +5,7 @@ var argyleink 	= {}
 baseScripts = [
 	  "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"
 	, "js/hammer.js"
+	, "js/avgrund.js"
 ];
 
 appScripts = [

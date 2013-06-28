@@ -1,8 +1,7 @@
 argyleink.menu = (function(){
 	'use strict';
 
-	var me 		= this
-	  , snap
+	var snap
 	  , element = $('#nav');
 
 	function init() {
@@ -18,11 +17,12 @@ argyleink.menu = (function(){
 	}
 
 	function listen() {
-		element.on('click', navClicked);
+		element.on('click', 'a', navClicked);
 	}
 
 	function navClicked(e) {
-		console.log(e.target + ": " + me);
+		console.log(e.target.innerText);
+		Avgrund.show('#default-popup');
 	}
 
 	return {

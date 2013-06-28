@@ -1,0 +1,58 @@
+body {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a {
+  color: #00a6fc;
+  text-decoration: none;
+}
+a:hover {
+  color: #52d7fe;
+}
+hr {
+  border-top-color: #2b383b;
+  border-bottom-color: #555c5e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  margin: 30px 0;
+}
+.btn-simple {
+  color: #fff;
+  margin: 3px;
+}
+.denim {
+  background: #444 url("../img/debut_dark.png") repeat;
+}
+.feed-launch {
+  margin-top: 2em;
+}
+.feed > article {
+  padding: 30px 0;
+  border-bottom: 1px solid dark-grey;
+}
+.feed-meta {
+  padding: 0 2em;
+}
+.feed-image {
+  max-width: 82px;
+}
+.feed-title {
+  display: inline-block;
+  color: #52d7fe;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 3rem;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+.feed-date {
+  font-size: 0.7em;
+  margin-left: 10px;
+  color: #577075;
+}
+.feed-tags {
+  margin: 0;
+  padding: 0 1em;
+  color: #808080;
+  font-weight: normal;
+  font-style: normal;
+}
