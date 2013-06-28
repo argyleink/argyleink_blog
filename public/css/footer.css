@@ -4,11 +4,11 @@ footer {
   z-index: 1;
   bottom: 0;
   width: 100%;
-  -webkit-transform: translate3d(0, 200px, 0);
-  -moz-transform: translate3d(0, 200px, 0);
-  -o-transform: translate3d(0, 200px, 0);
-  -ms-transform: translate3d(0, 200px, 0);
-  transform: translate3d(0, 200px, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
   height: 240px;
   cursor: pointer;
 }
@@ -16,9 +16,24 @@ footer {
   padding-top: 20px;
 }
 .menu-btn {
-  top: -0.5rem;
+  display: inline-block;
+  left: 50%;
+  top: -5rem;
+  margin-left: -2rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #00a6fc;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
   font-size: 2rem;
   color: rgba(26,26,26,0.5);
+}
+.menu-btn:active {
+  border-color: #52d7fe;
 }
 .menu-btn.tl {
   left: -0.5rem;

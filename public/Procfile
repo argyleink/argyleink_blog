@@ -1,1 +1,1 @@
-/Users/obey/dev/argyleink_blog/Procfile
+web: node server.js

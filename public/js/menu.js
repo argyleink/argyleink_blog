@@ -8,7 +8,7 @@ argyleink.menu = (function(){
 		snap = new argyleink.Snap(element, {
 			  min: 0
 			, max: 30
-			, start: 200
+			, start: 240
 			, dragThreshold: 75
 			, debug: true
 			, button: '#open-footer'
@@ -20,13 +20,23 @@ argyleink.menu = (function(){
 		element.on('click', 'a', navClicked);
 	}
 
+	function open() {
+		snap.show();
+	}
+
+	function close() {
+		snap.hide();
+	}
+
 	function navClicked(e) {
 		console.log(e.target.innerText);
-		Avgrund.show('#default-popup');
+		argyleink.menu.close();
 	}
 
 	return {
 		init: init
+	  ,	open: open
+	  , close: close
 	};
 
 })();

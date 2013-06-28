@@ -4,7 +4,7 @@ footer
 	z-index: 1
 	bottom: 0
 	width: 100%
-	transform: translate3d(0,200px,0)
+	transform: translate3d(0,100%,0)
 	height:240px
 	cursor:pointer
 
@@ -12,9 +12,20 @@ footer
 	padding-top:20px
 
 .menu-btn
-	top:-0.5rem
+	display:inline-block
+	left:50%
+	top:-5rem
+	margin-left:-2rem
+	width:4rem
+	height:4rem
+	padding:0.9rem 1rem
+	border:1px solid blue
+	border-radius:50%
 	font-size:2rem
 	color:hsla(0,0%,10%, 0.5)
+
+.menu-btn:active
+	border-color:light-blue
 
 .menu-btn.tl 
 	left:-0.5rem
